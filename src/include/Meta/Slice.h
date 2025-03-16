@@ -1,4 +1,0 @@
-namespace Meta {
-    struct Slice
-    {};
-}
