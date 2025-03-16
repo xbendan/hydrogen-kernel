@@ -79,7 +79,12 @@ namespace Meta {
             return _data[index];
         }
 
-        always_inline constexpr operator T*() const { return _data; }
+        always_inline constexpr T* operator*() { return &(_data[0]); }
+
+        always_inline constexpr T const* operator*() const
+        {
+            return &(_data[0]);
+        }
 
         always_inline constexpr usize Length() const { return TLen; }
 
@@ -164,6 +169,8 @@ namespace Meta {
         }
 
         T* operator*() { return _data; }
+
+        T const* operator*() const { return _data; }
 
         usize Length() const { return _size; }
 
