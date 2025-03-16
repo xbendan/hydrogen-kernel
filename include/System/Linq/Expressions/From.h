@@ -19,7 +19,7 @@ namespace System::Linq::Expressions {
     constexpr Enumerator<TSource, ArrayEnumerator<TSource>> From(
         Array<TSource>& source)
     {
-        return { ArrayEnumerator<TSource>(*source, source.Length()) };
+        return { ArrayEnumerator(*source, source.Length()) };
     }
 
     template <typename TSource, usize TLen>
@@ -27,7 +27,7 @@ namespace System::Linq::Expressions {
         Array<TSource, TLen>& source)
     {
         using T = decltype(*source);
-        return { ArrayEnumerator<TSource>(*source, source.Length()) };
+        return { ArrayEnumerator(*source, source.Length()) };
     }
 
     template <
