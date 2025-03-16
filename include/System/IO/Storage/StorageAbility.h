@@ -1,7 +1,7 @@
 #pragma once
 
 #include <Meta/Slice.h>
-#include <System/Stream.h>
+#include <System/IO/Stream.h>
 
 namespace System::IO::Storage {
     struct StorageReadable
