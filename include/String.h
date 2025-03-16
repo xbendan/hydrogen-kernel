@@ -1,0 +1,1 @@
+using cstr = char const*;
