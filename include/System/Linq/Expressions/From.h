@@ -17,16 +17,17 @@ namespace System::Linq::Expressions {
 
     template <typename TSource>
     constexpr Enumerator<TSource, ArrayEnumerator<TSource>> From(
-        Array<TSource> const& source)
+        Array<TSource>& source)
     {
-        return { ArrayEnumerator(source.buf(), source.len()) };
+        return { ArrayEnumerator<TSource>(*source, source.Length()) };
     }
 
     template <typename TSource, usize TLen>
     constexpr Enumerator<TSource, ArrayEnumerator<TSource>> From(
-        Array<TSource, TLen> const& source)
+        Array<TSource, TLen>& source)
     {
-        return { ArrayEnumerator(source.buf(), source.len()) };
+        using T = decltype(*source);
+        return { ArrayEnumerator<TSource>(*source, source.Length()) };
     }
 
     template <
