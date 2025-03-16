@@ -36,6 +36,7 @@ AlwaysBreakBeforeMultilineStrings: true
 
 BinPackArguments: false
 BinPackParameters: false
+BreakBeforeBinaryOperators: None
 
 ConstructorInitializerIndentWidth: 4
 ContinuationIndentWidth: 4
